@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% block content %}
+  <h1>{{ 'Edit' if form.name.data else 'Add' }} Item</h1>
+  <form method="post">
+    {{ form.csrf_token }}
+    <p>{{ form.name.label }} {{ form.name() }}</p>
+    <p>{{ form.quantity.label }} {{ form.quantity() }}</p>
+    <p>{{ form.category.label }} {{ form.category() }}</p>
+    <p>{{ form.description.label }} {{ form.description() }}</p>
+    <p>{{ form.submit() }}</p>
+  </form>
+{% endblock %}
